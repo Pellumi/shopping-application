@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingVertical="24dp"
+    android:paddingHorizontal="24dp"
+    android:background="@drawable/white_rounded_bg">
+
+    <TextView
+        android:id="@+id/dialog_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Remove from cart"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:paddingBottom="8dp"/>
+
+    <TextView
+        android:id="@+id/dialog_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Do you really want to remove this item from cart?"
+        android:paddingBottom="5dp"/>
+
+    <TextView
+        android:id="@+id/product_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:paddingBottom="16dp"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/saveForLaterButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="20dp"
+            android:background="@drawable/edit_text_clear"
+            android:backgroundTint="@color/transparent"
+            android:drawableLeft="@drawable/border_heart"
+            android:text="SAVE FOR LATER"
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/primaryColor"/>
+
+        <Button
+            android:id="@+id/removeItemButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="12dp"
+            android:drawableLeft="@drawable/baseline_delete_outline_24"
+            android:text="Remove Item"
+            android:textColor="@color/white"/>
+    </LinearLayout>
+</LinearLayout>
+

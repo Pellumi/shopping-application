@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingVertical="24dp"
+    android:paddingHorizontal="24dp"
+    android:background="@drawable/white_rounded_bg">
+
+    <TextView
+        android:id="@+id/dialog_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Confirm Order"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:paddingBottom="8dp"/>
+
+    <TextView
+        android:id="@+id/dialog_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="By clicking confirm, you agree that you have gone through all the items in your cart and you wish to place this order"
+        android:paddingBottom="16dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/cancel_order"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="20dp"
+            android:background="@drawable/edit_text_clear"
+            android:backgroundTint="@color/transparent"
+            android:text="Cancel"
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/primaryColor"/>
+
+        <Button
+            android:id="@+id/confirm_order"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="12dp"
+            android:text="Confirm"
+            android:textColor="@color/white"/>
+    </LinearLayout>
+</LinearLayout>
+

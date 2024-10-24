@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "901423354994",
+    "firebase_url": "https://mobile-design-project-default-rtdb.firebaseio.com",
+    "project_id": "mobile-design-project",
+    "storage_bucket": "mobile-design-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:901423354994:android:6160dc6802e8283cb41eeb",
+        "android_client_info": {
+          "package_name": "com.example.mobiledesignproject"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXBnIqhKmjmfkGMIOBlCLYBAhjZc70x2o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

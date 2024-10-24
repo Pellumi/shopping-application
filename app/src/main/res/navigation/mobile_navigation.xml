@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.example.mobiledesignproject.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_category"
+            app:destination="@id/navigation_category" />
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_cart"
+            app:destination="@+id/navigation_cart"/>
+        <deepLink
+            android:id = "@+id/deep_link_home"
+            app:uri="myapp://navigation_home"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_category"
+        android:name="com.example.mobiledesignproject.ui.category.CategoryFragment"
+        android:label="@string/title_dashboard"
+        tools:layout="@layout/fragment_category" >
+        <deepLink
+            android:id = "@+id/deep_link_category"
+            app:uri="myapp://navigation_category"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_cart"
+        android:name="com.example.mobiledesignproject.ui.cart.CartFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_cart" >
+        <deepLink
+            android:id = "@+id/deep_link_cart"
+            app:uri="myapp://navigation_cart"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_account"
+        android:name="com.example.mobiledesignproject.ui.account.AccountFragment"
+        android:label="Account"
+        tools:layout="@layout/fragment_account" >
+        <deepLink
+            android:id = "@+id/deep_link_account"
+            app:uri="myapp://navigation_account"/>
+    </fragment>
+</navigation>

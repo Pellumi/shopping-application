@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="CustomButtonStyle" parent="Widget.AppCompat.Button">
+        <item name="android:backgroundTint">@drawable/btn_clear_bg</item>
+        <item name="android:foreground">@android:attr/selectableItemBackground</item>
+        <item name="android:textColor">@color/primaryColor</item>
+    </style>
+    <style name="TransparentButtonStyle" parent="Widget.AppCompat.Button">
+        <item name="backgroundTint">@color/transparent</item>
+        <item name="android:foreground">@android:attr/selectableItemBackground</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+    <style name="CustomEditTextStyle" parent="Widget.AppCompat.EditText">
+        <item name="colorControlActivated">@color/accent_color</item>
+        <item name="android:textColorHighlight">@color/accent_color</item>
+    </style>
+    <style name="CustomRatingBar" parent="@android:style/Widget.DeviceDefault.RatingBar">
+        <item name="android:progressDrawable">@drawable/custom_rating_bar</item>
+        <item name="android:minHeight">56dp</item>
+        <item name="android:maxHeight">56dp</item>
+    </style>
+</resources>

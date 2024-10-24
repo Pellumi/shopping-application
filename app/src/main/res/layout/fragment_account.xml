@@ -1,0 +1,561 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/transparent"
+    tools:context=".ui.account.AccountFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/white_rounded_bg"
+        android:layout_marginBottom="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="10dp"
+            android:background="@drawable/white_rounded_bg"
+            android:paddingHorizontal="15dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="4dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Welcome:"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="15sp"/>
+
+                <TextView
+                    android:id="@+id/user_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textStyle="normal"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:layout_marginStart="5dp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/user_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:text="Email"
+                android:layout_marginBottom="4dp"
+                android:textSize="16sp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Matric Number:"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="15sp"/>
+
+                <TextView
+                    android:id="@+id/user_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textStyle="normal"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginBottom="4dp"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:background="@color/transparent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="5dp"
+            android:background="@color/transparent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:paddingVertical="5dp"
+                android:orientation="vertical"
+                android:background="@drawable/white_rounded_bg">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginStart="10dp"
+                    android:text="My Babrite Account"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/darkDisabled"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/white_rounded_bg"
+                    android:orientation="vertical">
+
+<!--                    <LinearLayout-->
+<!--                        android:id="@+id/orders"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:gravity="center_vertical"-->
+<!--                        android:background="@color/white"-->
+<!--                        android:orientation="horizontal"-->
+<!--                        android:paddingVertical="10dp"-->
+<!--                        android:paddingHorizontal="10dp">-->
+
+<!--                        <ImageView-->
+<!--                            android:layout_width="30dp"-->
+<!--                            android:layout_height="30dp"-->
+<!--                            android:background="@drawable/baseline_shopping_bag_24"/>-->
+
+<!--                        <TextView-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:gravity="bottom"-->
+<!--                            android:layout_weight="1"-->
+<!--                            android:layout_marginStart="20dp"-->
+<!--                            android:text="Orders"-->
+<!--                            android:textColor="@color/black"-->
+<!--                            android:textSize="14sp"/>-->
+
+<!--                        <ImageView-->
+<!--                            android:layout_width="17dp"-->
+<!--                            android:layout_height="17dp"-->
+<!--                            android:background="@drawable/baseline_arrow_forward_ios_24"/>-->
+<!--                    </LinearLayout>-->
+
+                    <Button
+                        android:id="@+id/nav_to_order"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:elevation="2dp"
+                        android:backgroundTint="@color/white"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="12dp"
+                        android:textAllCaps="false"
+                        android:text="Orders"
+                        android:textSize="14sp"
+                        android:drawableLeft="@drawable/baseline_shopping_bag_24"
+                        android:drawablePadding="8dp"
+                        android:drawableRight="@drawable/baseline_arrow_forward_ios_24"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/black" />
+
+                    <Button
+                        android:id="@+id/nav_to_inbox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:elevation="2dp"
+                        android:backgroundTint="@color/white"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="12dp"
+                        android:textAllCaps="false"
+                        android:text="Inbox"
+                        android:textSize="14sp"
+                        android:drawableLeft="@drawable/baseline_mail_24"
+                        android:drawablePadding="8dp"
+                        android:drawableRight="@drawable/baseline_arrow_forward_ios_24"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/black" />
+
+                    <Button
+                        android:id="@+id/nav_to_saved"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:elevation="2dp"
+                        android:backgroundTint="@color/white"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="12dp"
+                        android:textAllCaps="false"
+                        android:text="Saved Items"
+                        android:textSize="14sp"
+                        android:drawableLeft="@drawable/black_border_heart"
+                        android:drawablePadding="8dp"
+                        android:drawableRight="@drawable/baseline_arrow_forward_ios_24"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/black" />
+
+                    <Button
+                        android:id="@+id/nav_to_rate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:elevation="2dp"
+                        android:backgroundTint="@color/white"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="12dp"
+                        android:textAllCaps="false"
+                        android:text="Ratings and Reviews"
+                        android:textSize="14sp"
+                        android:drawableLeft="@drawable/baseline_rate_review_24"
+                        android:drawablePadding="8dp"
+                        android:drawableRight="@drawable/baseline_arrow_forward_ios_24"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/black" />
+
+                    <Button
+                        android:id="@+id/nav_to_recent_search"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/white"
+                        android:drawableLeft="@drawable/baseline_youtube_searched_for_24"
+                        android:drawableRight="@drawable/baseline_arrow_forward_ios_24"
+                        android:drawablePadding="8dp"
+                        android:elevation="0dp"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:gravity="center_vertical"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="12dp"
+                        android:text="Recently Searched"
+                        android:textAllCaps="false"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+
+<!--                    <LinearLayout-->
+<!--                        android:id="@+id/inbox"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:gravity="center_vertical"-->
+<!--                        android:elevation="2dp"-->
+<!--                        android:foreground="?android:attr/selectableItemBackground"-->
+<!--                        android:background="@color/white"-->
+<!--                        android:orientation="horizontal"-->
+<!--                        android:paddingVertical="10dp"-->
+<!--                        android:paddingHorizontal="10dp">-->
+
+<!--                        <ImageView-->
+<!--                            android:layout_width="30dp"-->
+<!--                            android:layout_height="30dp"-->
+<!--                            android:background="@drawable/baseline_mail_24"/>-->
+
+<!--                        <TextView-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:gravity="bottom"-->
+<!--                            android:layout_weight="1"-->
+<!--                            android:layout_marginStart="20dp"-->
+<!--                            android:text="Inbox"-->
+<!--                            android:textColor="@color/black"-->
+<!--                            android:textSize="14sp"/>-->
+
+<!--                        <ImageView-->
+<!--                            android:layout_width="17dp"-->
+<!--                            android:layout_height="17dp"-->
+<!--                            android:background="@drawable/baseline_arrow_forward_ios_24"/>-->
+<!--                    </LinearLayout>-->
+
+<!--                    <LinearLayout-->
+<!--                        android:id="@+id/saved_items"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:gravity="center_vertical"-->
+<!--                        android:background="@color/white"-->
+<!--                        android:orientation="horizontal"-->
+<!--                        android:paddingVertical="10dp"-->
+<!--                        android:paddingHorizontal="10dp">-->
+
+<!--                        <ImageView-->
+<!--                            android:layout_width="30dp"-->
+<!--                            android:layout_height="30dp"-->
+<!--                            android:background="@drawable/black_border_heart"/>-->
+
+<!--                        <TextView-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:gravity="bottom"-->
+<!--                            android:layout_weight="1"-->
+<!--                            android:layout_marginStart="20dp"-->
+<!--                            android:text="Saved Items"-->
+<!--                            android:textColor="@color/black"-->
+<!--                            android:textSize="14sp"/>-->
+
+<!--                        <ImageView-->
+<!--                            android:layout_width="17dp"-->
+<!--                            android:layout_height="17dp"-->
+<!--                            android:background="@drawable/baseline_arrow_forward_ios_24"/>-->
+<!--                    </LinearLayout>-->
+
+<!--                    <LinearLayout-->
+<!--                        android:id="@+id/ratings"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:gravity="center_vertical"-->
+<!--                        android:background="@color/white"-->
+<!--                        android:orientation="horizontal"-->
+<!--                        android:paddingVertical="10dp"-->
+<!--                        android:paddingHorizontal="10dp">-->
+
+<!--                        <ImageView-->
+<!--                            android:layout_width="30dp"-->
+<!--                            android:layout_height="30dp"-->
+<!--                            android:background="@drawable/baseline_rate_review_24"/>-->
+
+<!--                        <TextView-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:gravity="bottom"-->
+<!--                            android:layout_weight="1"-->
+<!--                            android:layout_marginStart="20dp"-->
+<!--                            android:text="Ratings and Reviews"-->
+<!--                            android:textColor="@color/black"-->
+<!--                            android:textSize="14sp"/>-->
+
+<!--                        <ImageView-->
+<!--                            android:layout_width="17dp"-->
+<!--                            android:layout_height="17dp"-->
+<!--                            android:background="@drawable/baseline_arrow_forward_ios_24"/>-->
+<!--                    </LinearLayout>-->
+
+<!--                    <LinearLayout-->
+<!--                        android:id="@+id/recent_search"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:gravity="center_vertical"-->
+<!--                        android:background="@color/white"-->
+<!--                        android:orientation="horizontal"-->
+<!--                        android:paddingVertical="10dp"-->
+<!--                        android:paddingHorizontal="10dp">-->
+
+<!--                        <ImageView-->
+<!--                            android:layout_width="30dp"-->
+<!--                            android:layout_height="30dp"-->
+<!--                            android:background="@drawable/baseline_youtube_searched_for_24"/>-->
+
+<!--                        <TextView-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:gravity="bottom"-->
+<!--                            android:layout_weight="1"-->
+<!--                            android:layout_marginStart="20dp"-->
+<!--                            android:text="Recently Searched"-->
+<!--                            android:textColor="@color/black"-->
+<!--                            android:textSize="14sp"/>-->
+
+<!--                        <ImageView-->
+<!--                            android:layout_width="17dp"-->
+<!--                            android:layout_height="17dp"-->
+<!--                            android:background="@drawable/baseline_arrow_forward_ios_24"/>-->
+<!--                    </LinearLayout>-->
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/white_rounded_bg"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
+                    android:layout_marginStart="10dp"
+                    android:text="My Settings"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/darkDisabled"/>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/white_rounded_bg"
+                    android:orientation="vertical">
+
+<!--                    <LinearLayout-->
+<!--                        android:id="@+id/address_book"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:gravity="center_vertical"-->
+<!--                        android:background="@color/white"-->
+<!--                        android:orientation="horizontal"-->
+<!--                        android:paddingVertical="10dp"-->
+<!--                        android:paddingHorizontal="10dp">-->
+
+<!--                        <TextView-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:gravity="bottom"-->
+<!--                            android:layout_weight="1"-->
+<!--                            android:layout_marginStart="20dp"-->
+<!--                            android:text="Address book"-->
+<!--                            android:textColor="@color/black"-->
+<!--                            android:textSize="14sp"/>-->
+
+<!--                        <ImageView-->
+<!--                            android:layout_width="17dp"-->
+<!--                            android:layout_height="17dp"-->
+<!--                            android:background="@drawable/baseline_arrow_forward_ios_24"/>-->
+<!--                    </LinearLayout>-->
+
+                    <Button
+                        android:id="@+id/nav_to_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/white"
+                        android:drawableRight="@drawable/baseline_arrow_forward_ios_24"
+                        android:elevation="0dp"
+                        android:paddingStart="30dp"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:gravity="center_vertical"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="12dp"
+                        android:text="Address book"
+                        android:textAllCaps="false"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        tools:ignore="RtlSymmetry" />
+
+
+<!--                    <LinearLayout-->
+<!--                        android:id="@+id/manage_account"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:gravity="center_vertical"-->
+<!--                        android:background="@color/white"-->
+<!--                        android:orientation="horizontal"-->
+<!--                        android:paddingVertical="10dp"-->
+<!--                        android:paddingHorizontal="10dp">-->
+
+<!--                        <TextView-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:gravity="bottom"-->
+<!--                            android:layout_weight="1"-->
+<!--                            android:layout_marginStart="20dp"-->
+<!--                            android:text="Account Management"-->
+<!--                            android:textColor="@color/black"-->
+<!--                            android:textSize="14sp"/>-->
+
+<!--                        <ImageView-->
+<!--                            android:layout_width="17dp"-->
+<!--                            android:layout_height="17dp"-->
+<!--                            android:background="@drawable/baseline_arrow_forward_ios_24"/>-->
+<!--                    </LinearLayout>-->
+                    <Button
+                        android:id="@+id/account_manage"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/white"
+                        android:drawableRight="@drawable/baseline_arrow_forward_ios_24"
+                        android:elevation="0dp"
+                        android:paddingStart="30dp"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:gravity="center_vertical"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="12dp"
+                        android:text="Account Management"
+                        android:textAllCaps="false"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        tools:ignore="RtlSymmetry" />
+
+
+<!--                    <LinearLayout-->
+<!--                        android:id="@+id/close_account"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:gravity="center_vertical"-->
+<!--                        android:background="@color/white"-->
+<!--                        android:orientation="horizontal"-->
+<!--                        android:paddingVertical="10dp"-->
+<!--                        android:paddingHorizontal="10dp">-->
+
+<!--                        <TextView-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:gravity="bottom"-->
+<!--                            android:layout_weight="1"-->
+<!--                            android:layout_marginStart="20dp"-->
+<!--                            android:text="Close Account"-->
+<!--                            android:textColor="@color/black"-->
+<!--                            android:textSize="14sp"/>-->
+
+<!--                        <ImageView-->
+<!--                            android:layout_width="17dp"-->
+<!--                            android:layout_height="17dp"-->
+<!--                            android:background="@drawable/baseline_arrow_forward_ios_24"/>-->
+<!--                    </LinearLayout>-->
+                    <Button
+                        android:id="@+id/close_account"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/white"
+                        android:drawableRight="@drawable/baseline_arrow_forward_ios_24"
+                        android:elevation="0dp"
+                        android:paddingStart="30dp"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:gravity="center_vertical"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="12dp"
+                        android:text="Close Account"
+                        android:textAllCaps="false"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        tools:ignore="RtlSymmetry" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:background="@drawable/white_rounded_bg"
+                android:orientation="horizontal"
+                android:paddingVertical="10dp"
+                android:paddingHorizontal="10dp">
+
+                <TextView
+                    android:id="@+id/log_out"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="LOGOUT"
+                    android:textColor="@color/primaryColor"
+                    android:textSize="15sp"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

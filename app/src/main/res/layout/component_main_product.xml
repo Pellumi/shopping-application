@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="170dp"
+    android:paddingHorizontal="10dp"
+    android:layout_marginEnd="4dp"
+    android:paddingVertical="15dp"
+    android:background="@drawable/white_rounded_bg"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/product_image"
+        android:layout_width="150dp"
+        android:scaleType="fitCenter"
+        android:layout_height="150dp"
+        android:adjustViewBounds="true"
+        android:layout_marginBottom="5dp"
+        android:layout_gravity="center_horizontal"/>
+
+    <TextView
+        android:id="@+id/product_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:textSize="13sp"
+        android:textColor="@color/black"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:maxLength="20"
+        android:text="Product Name"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/product_price"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="start"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:textColor="@color/black"
+            android:text="Price"
+            android:textSize="15sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/product_qty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|left"
+            android:layout_marginEnd="4dp"
+            android:text="Qty"
+            android:textColor="@color/darkDisabled"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/items_remain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:text="Items left"
+        android:textColor="@color/primaryColor"
+        android:textSize="12sp" />
+</LinearLayout>
