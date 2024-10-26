@@ -238,4 +238,12 @@ public class UIMethods {
             return null;
         }
     }
+
+    public String getFirstThreeChars(String input){
+        if(input == null || input.length() < 3){
+            return input;
+        }
+
+        return input.substring(0, 3);
+    }
 }
