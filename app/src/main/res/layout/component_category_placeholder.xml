@@ -3,13 +3,10 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="100dp"
     android:layout_height="80dp"
+    android:background="@drawable/white_rounded_bg"
+    android:layout_marginBottom="5dp"
     android:orientation="vertical"
     android:maxWidth="80dp">
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/shadow"/>
 
     <View
         android:layout_width="match_parent"
@@ -22,7 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="          "
-        android:background="@color/shadow"
+        android:background="@color/white"
         android:textAlignment="center"
         android:paddingHorizontal="15dp"
         android:textStyle="bold"
@@ -33,10 +30,4 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:background="@color/transparent"/>
-
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/shadow"/>
 </LinearLayout>

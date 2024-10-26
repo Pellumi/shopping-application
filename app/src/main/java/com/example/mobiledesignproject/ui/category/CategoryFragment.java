@@ -25,7 +25,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.mobiledesignproject.R;
 import com.example.mobiledesignproject.adapter.CategoryAdapter;
 import com.example.mobiledesignproject.adapter.CategoryPlaceHolderAdapter;
+import com.example.mobiledesignproject.adapter.PlaceHolderAdapter;
 import com.example.mobiledesignproject.adapter.SearchAdapter;
+import com.example.mobiledesignproject.adapter.SubCategoryAdapter;
 import com.example.mobiledesignproject.api.FetchCategoryApiService;
 import com.example.mobiledesignproject.api.SearchApiService;
 import com.example.mobiledesignproject.model.Category;
@@ -42,8 +44,9 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class CategoryFragment extends Fragment {
-    RecyclerView categoryView, subCategoryView;
-    CategoryAdapter categoryAdapter;
+    private RecyclerView categoryView, subCategoryView;
+    private CategoryAdapter categoryAdapter;
+    private SubCategoryAdapter subCategoryAdapter;
     EditText searchInput;
     private final UIMethods uiMethods = new UIMethods();
     private SearchAdapter searchAdapter;
@@ -64,7 +67,7 @@ public class CategoryFragment extends Fragment {
         List<Category> categoryList = new ArrayList<>();
         List<Product> searchResultList = new ArrayList<>();
 
-        fetchCategories(categoryView, categoryList);
+        fetchCategories(categoryView, subCategoryView, categoryList);
 
         searchInput.addTextChangedListener(new TextWatcher() {
             @Override
@@ -114,14 +117,19 @@ public class CategoryFragment extends Fragment {
         return view;
     }
 
-    private void fetchCategories(RecyclerView recyclerView, List<Category> categoryList) {
+    private void fetchCategories(RecyclerView categoryRecyclerView, RecyclerView subCategoryRecyclerView, List<Category> categoryList) {
         Log.e("CategoryFragment", "Started fetching categories");
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
-
-        recyclerView.setLayoutManager(layoutManager);
+        categoryRecyclerView.setLayoutManager(layoutManager);
 
         CategoryPlaceHolderAdapter categoryPlaceHolderAdapter = new CategoryPlaceHolderAdapter();
-        recyclerView.setAdapter(categoryPlaceHolderAdapter);
+        categoryRecyclerView.setAdapter(categoryPlaceHolderAdapter);
+
+        subCategoryRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        PlaceHolderAdapter subCategoryPlaceHolderAdapter = new PlaceHolderAdapter(getContext(), R.layout.component_category_tab_placeholder);
+        subCategoryRecyclerView.setAdapter(subCategoryPlaceHolderAdapter);
+
         RetrofitClient.getClient().create(FetchCategoryApiService.class)
                 .fetchCategory()
                 .enqueue(new Callback<List<Category>>() {
@@ -129,10 +137,21 @@ public class CategoryFragment extends Fragment {
                     public void onResponse(@NonNull Call<List<Category>> call, @NonNull Response<List<Category>> response) {
                         if (response.isSuccessful() && response.body() != null) {
                             Log.e("CategoryFragment", "response successful, assigning UI");
+
                             categoryList.addAll(response.body());
 
-                            categoryAdapter = new CategoryAdapter(categoryList, getContext());
-                            recyclerView.setAdapter(categoryAdapter);
+                            categoryAdapter = new CategoryAdapter(categoryList, getContext(), subcategories -> {
+                                subCategoryAdapter.setSubcategories(subcategories);
+                            });
+                            categoryRecyclerView.setAdapter(categoryAdapter);
+
+                            subCategoryAdapter = new SubCategoryAdapter(getContext());
+                            subCategoryRecyclerView.setAdapter(subCategoryAdapter);
+
+                            if(!categoryList.isEmpty()){
+                                Category firstCategory = categoryList.get(0);
+                                subCategoryAdapter.setSubcategories(firstCategory.getSubCategories());
+                            }
                             Log.e("CategoryFragment", "Ui attached");
                         }
                     }

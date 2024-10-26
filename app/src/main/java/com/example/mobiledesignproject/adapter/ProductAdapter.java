@@ -30,33 +30,6 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         this.context = context;
     }
 
-//    public static String formatCurrency(String numberString){
-//        if (numberString.isEmpty()) {
-//            return numberString;
-//        }
-//
-//        String[] parts = numberString.split("\\.");
-//        String integerPart = parts[0];
-//
-//        StringBuilder reversedInteger = new StringBuilder(integerPart).reverse();
-//
-//        StringBuilder formattedInteger = new StringBuilder();
-//        for (int i = 0; i < reversedInteger.length(); i++) {
-//            formattedInteger.append(reversedInteger.charAt(i));
-//            if (i != 0 && (i + 1) % 3 == 0 && reversedInteger.length() > 3) {
-//                formattedInteger.append(",");
-//            }
-//        }
-//
-//        String formattedNumber = formattedInteger.reverse().toString();
-//
-//        if (parts.length > 1) {
-//            formattedNumber += "." + parts[1];
-//        }
-//
-//        return "₦" + formattedNumber;
-//    }
-
     @NonNull
     @Override
     public ProductAdapter.ProductViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
