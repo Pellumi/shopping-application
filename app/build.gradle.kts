@@ -55,8 +55,9 @@ dependencies {
     implementation(libs.material.v150)
     implementation(libs.glide)
     implementation(libs.compiler)
+    implementation(libs.flexbox)
     implementation(libs.picasso)
     implementation(libs.core.splashscreen)
-    implementation("io.socket:socket.io-client:2.0.0")
+    implementation(libs.socket.io.client)
     implementation("org.json:json:20210307")
 }
