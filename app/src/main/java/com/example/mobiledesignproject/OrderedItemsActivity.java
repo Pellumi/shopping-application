@@ -1,5 +1,6 @@
 package com.example.mobiledesignproject;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -8,6 +9,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -230,5 +232,16 @@ public class OrderedItemsActivity extends AppCompatActivity {
             recyclerView.setVisibility(View.VISIBLE);
             linearLayout.setVisibility(View.GONE);
         }
+    }
+
+    private void showDialog(Context context, String userId, String totalAmount, String address){
+        Dialog dialog = new Dialog(context);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.dialog_order_details);
+
+
+
+
+        dialog.show();
     }
 }
