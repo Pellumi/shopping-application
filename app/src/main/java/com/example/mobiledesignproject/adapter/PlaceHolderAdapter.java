@@ -8,20 +8,20 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.mobiledesignproject.R;
-
 public class PlaceHolderAdapter extends RecyclerView.Adapter<PlaceHolderAdapter.PlaceHolderViewHolder> {
 
     private final Context context;
+    private final int id;
 
-    public PlaceHolderAdapter(Context context) {
+    public PlaceHolderAdapter(Context context, int id) {
         this.context = context;
+        this.id = id;
     }
 
     @NonNull
     @Override
     public PlaceHolderAdapter.PlaceHolderViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.component_main_placeholder, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(id, parent, false);
         return new PlaceHolderViewHolder(view);
     }
 

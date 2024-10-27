@@ -152,7 +152,7 @@ public class HomeFragment extends Fragment {
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
 
         recyclerView.setLayoutManager(layoutManager);
-        PlaceHolderAdapter placeHolderAdapter = new PlaceHolderAdapter(requireActivity());
+        PlaceHolderAdapter placeHolderAdapter = new PlaceHolderAdapter(requireActivity(), R.layout.component_main_placeholder);
         recyclerView.setAdapter(placeHolderAdapter);
         RetrofitClient.getClient().create(ProductApiService.class)
                 .getProducts(categoryId, subcategoryId)
