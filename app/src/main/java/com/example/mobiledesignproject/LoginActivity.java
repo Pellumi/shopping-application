@@ -1,5 +1,7 @@
 package com.example.mobiledesignproject;
 
+import static android.content.ContentValues.TAG;
+
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -17,10 +19,13 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.example.mobiledesignproject.api.AuthApiService;
+import com.example.mobiledesignproject.api.CreateTokenApiService;
+import com.example.mobiledesignproject.model.FcmToken;
 import com.example.mobiledesignproject.model.LoginRequest;
 import com.example.mobiledesignproject.model.LoginResponse;
 import com.example.mobiledesignproject.network.RetrofitClient;
 import com.example.mobiledesignproject.ui.UIMethods;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.google.gson.Gson;
 
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -28,6 +33,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import retrofit2.Retrofit;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -38,6 +44,9 @@ public class LoginActivity extends AppCompatActivity {
     Intent intent;
     Context context = LoginActivity.this;
     private final UIMethods ui = new UIMethods(context, intent);
+
+    Retrofit retrofit = RetrofitClient.getClient();
+    CreateTokenApiService createTokenApiService = retrofit.create(CreateTokenApiService.class);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -108,6 +117,8 @@ public class LoginActivity extends AppCompatActivity {
                     editor.putBoolean("isLoggedIn", true);
                     editor.apply();
 
+                    createNewTokenAfterLogin(matric_no);
+
                     intent = new Intent(LoginActivity.this, MainActivity.class);
                     startActivity(intent);
                     finish();
@@ -137,6 +148,41 @@ public class LoginActivity extends AppCompatActivity {
                 mPassword.setAlpha(1F);
                 ui.showLowerRegularSnackBar(context, "Error: " + t.getMessage(), R.color.danger_color, R.id.main);
                 Log.e("LoginError", "Request failed: " + t.getMessage());
+            }
+        });
+    }
+
+    public void createNewTokenAfterLogin(String userId) {
+        FirebaseMessaging.getInstance().getToken()
+                .addOnCompleteListener(task -> {
+                    if (!task.isSuccessful()) {
+                        Log.w(TAG, "Fetching FCM registration token failed", task.getException());
+                        return;
+                    }
+
+                    String token = task.getResult();
+
+                    Log.d(TAG, "FCM Token: " + token);
+                    sendTokenToServer(userId, token);
+                });
+    }
+
+    private void sendTokenToServer(String userId, String token){
+        FcmToken fcmToken = new FcmToken(token);
+        Call<Void> call = createTokenApiService.createToken(userId, fcmToken);
+        call.enqueue(new Callback<Void>() {
+            @Override
+            public void onResponse(@NonNull Call<Void> call, @NonNull Response<Void> response) {
+                if (response.isSuccessful()) {
+                    Log.d("LoginActivity", "Token sent successfully");
+                } else {
+                    Log.e("LoginActivity", "Failed to send token, response code: " + response.code());
+                }
+            }
+
+            @Override
+            public void onFailure(@NonNull Call<Void> call, @NonNull Throwable t) {
+                Log.e("LoginActivity", "Error sending token", t);
             }
         });
     }
