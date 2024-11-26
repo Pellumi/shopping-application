@@ -178,45 +178,6 @@ public class HomeFragment extends Fragment {
                 });
     }
 
-//    private void searchByDescription(String keyword, RecyclerView recyclerView, List<Product> productList){
-//
-//        LinearLayoutManager layoutManager = new LinearLayoutManager(requireActivity(), LinearLayoutManager.VERTICAL, false);
-//
-//        recyclerView.setLayoutManager(layoutManager);
-//        RetrofitClient.getClient().create(SearchApiService.class)
-//                .searchByCategory(keyword)
-//                .enqueue(new Callback<Map<String, Product>>() {
-//                    @Override
-//                    public void onResponse(@NonNull Call<Map<String, Product>> call, @NonNull Response<Map<String, Product>> response) {
-//                        if(response.isSuccessful() && response.body() != null){
-//                            Map<String, Product> productMap = response.body();
-//                            for(Map.Entry<String, Product> entry : productMap.entrySet()){
-//                                Product product = entry.getValue();
-//                                productList.add(product);
-//                            }
-//
-//                            searchAdapter = new SearchAdapter(productList, requireActivity());
-//                            recyclerView.setAdapter(searchAdapter);
-//                            recyclerView.setVisibility(View.VISIBLE);
-//                        } else {
-//                            if (response.code() == 404){
-//                                uiMethods.showRegularSnackBar(requireContext(), "No products found in this category", R.color.danger_color, R.id.fragment_home);
-//                            } else if (response.code() == 400) {
-//                                Toast.makeText(getContext(), "Enter a search query", Toast.LENGTH_SHORT).show();
-//                            } else {
-//                                Toast.makeText(getContext(), "Login failed, please try again later " + response.message(), Toast.LENGTH_SHORT).show();
-//                                Log.e("LoginError", "Other Error: " + response.code() + " - " + response.message());
-//                            }
-//                        }
-//                    }
-//
-//                    @Override
-//                    public void onFailure(@NonNull Call<Map<String, Product>> call, @NonNull Throwable t) {
-//                        Log.e("ProductDisplayActivity", "Error fetching products: " + t.getMessage(), t);
-//                    }
-//                });
-//    }
-
     private void searchByName(String keyword, RecyclerView recyclerView, List<Product> productList){
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(requireActivity(), LinearLayoutManager.VERTICAL, false);

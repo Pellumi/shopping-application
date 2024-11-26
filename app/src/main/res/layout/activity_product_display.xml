@@ -324,6 +324,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
+                    android:visibility="gone"
                     android:padding="8dp"
                     android:background="@color/shadow">
 
@@ -364,8 +365,8 @@
 <!--                                android:gravity="start"-->
 <!--                                android:stepSize="1.0"-->
 <!--                                android:rating="0"-->
-<!--                                android:scaleX="0.7"-->
-<!--                                android:scaleY="0.7"-->
+<!--                                android:scaleX="1"-->
+<!--                                android:scaleY="1"-->
 <!--                                android:theme="@style/Widget.AppCompat.RatingBar.Small" />-->
 
                             <RatingBar

@@ -38,7 +38,7 @@ import retrofit2.Retrofit;
 public class LoginActivity extends AppCompatActivity {
 
     EditText matricNo, mPassword;
-    TextView togglePassword;
+    TextView togglePassword, forgotPassword;
     Button mLogin;
     private AuthApiService authApiService;
     Intent intent;
@@ -64,12 +64,19 @@ public class LoginActivity extends AppCompatActivity {
         mPassword = findViewById(R.id.password);
         mLogin = findViewById(R.id.login_btn);
         togglePassword = findViewById(R.id.toggle_password);
+        forgotPassword = findViewById(R.id.forgot_password);
         AtomicBoolean isPasswordVisible = new AtomicBoolean(false);
 
         authApiService = RetrofitClient.getClient().create(AuthApiService.class);
 
         ui.changeUI(matricNo);
         ui.changeUI(mPassword);
+
+        forgotPassword.setOnClickListener(v -> {
+//            Toast.makeText(context, "This will be available in the next update", Toast.LENGTH_SHORT).show();
+            intent = new Intent(LoginActivity.this, ForgotPasswordActivity.class);
+            startActivity(intent);
+        });
 
         togglePassword.setOnClickListener(v -> {
             isPasswordVisible.set(!isPasswordVisible.get());
@@ -91,6 +98,7 @@ public class LoginActivity extends AppCompatActivity {
         }
 
         mLogin.setText(R.string.please_wait); // TODO: work on this text change for the button
+        // TODO: work on the resetting password function
 
         matricNo.setEnabled(false);
         matricNo.setAlpha(0.5F);
