@@ -9,7 +9,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mobiledesignproject.R;
@@ -81,8 +81,9 @@ public class SubCategoryAdapter extends RecyclerView.Adapter<SubCategoryAdapter.
     }
 
     private void fetchProducts(String categoryId, String subcategoryId, RecyclerView recyclerView, List<Product> productList, LinearLayout linearLayout){
-        LinearLayoutManager layoutManager = new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false);
-
+//        LinearLayoutManager layoutManager = new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false);
+        GridLayoutManager layoutManager = new GridLayoutManager(context, 3);
+        
         recyclerView.setLayoutManager(layoutManager);
         productList.clear();
 

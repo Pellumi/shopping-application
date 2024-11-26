@@ -43,7 +43,7 @@ public class CategoryItemAdapter extends RecyclerView.Adapter<CategoryItemAdapte
         Glide.with(context)
                 .load(product.getImageUrl())
                 .placeholder(R.color.shadow)
-                .override(80, 80)
+                .override(60, 60)
                 .fitCenter()
                 .into(holder.productImage);
         holder.itemView.setOnClickListener(view -> {

@@ -15,6 +15,6 @@
         <item name="android:textColorHint">@color/disabled</item>
         <item name="colorButtonNormal">@color/primaryColor</item>
         <item name="android:windowSplashScreenBackground">@color/primaryColor</item>
-<!--        <item name="android:windowSplashScreenAnimatedIcon">@drawable/babrite_small_logo</item>-->
+        <item name="android:windowSplashScreenAnimatedIcon">@mipmap/new_logo</item>
     </style>
 </resources>

@@ -27,7 +27,7 @@ import com.example.mobiledesignproject.CheckoutActivity;
 import com.example.mobiledesignproject.MainActivity;
 import com.example.mobiledesignproject.R;
 import com.example.mobiledesignproject.adapter.CartAdapter;
-import com.example.mobiledesignproject.adapter.CartPlaceHolderAdapter;
+import com.example.mobiledesignproject.adapter.PlaceHolderAdapter;
 import com.example.mobiledesignproject.api.RemoveFromCartService;
 import com.example.mobiledesignproject.api.SaveItemApiService;
 import com.example.mobiledesignproject.api.ShowCartApiService;
@@ -102,7 +102,7 @@ public class CartFragment extends Fragment {
         LinearLayoutManager layoutManager = new LinearLayoutManager(requireActivity(), LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(layoutManager);
 
-        CartPlaceHolderAdapter cartPlaceHolderAdapter = new CartPlaceHolderAdapter(getContext());
+        PlaceHolderAdapter cartPlaceHolderAdapter = new PlaceHolderAdapter(getContext(), R.layout.component_cart_placeholder);
         recyclerView.setAdapter(cartPlaceHolderAdapter);
 
         RetrofitClient.getClient().create(ShowCartApiService.class)
