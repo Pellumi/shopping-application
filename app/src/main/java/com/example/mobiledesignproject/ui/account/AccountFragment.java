@@ -18,6 +18,7 @@ import androidx.fragment.app.Fragment;
 import com.example.mobiledesignproject.LoginActivity;
 import com.example.mobiledesignproject.OrderedItemsActivity;
 import com.example.mobiledesignproject.R;
+import com.example.mobiledesignproject.SavedItemsActivity;
 import com.example.mobiledesignproject.model.LoginResponse;
 import com.example.mobiledesignproject.ui.UIMethods;
 import com.google.gson.Gson;
@@ -70,9 +71,9 @@ public class AccountFragment extends Fragment {
         });
 
         savedNav.setOnClickListener(v -> {
-//            intent = new Intent(getContext(), SavedItemsActivity.class);
-//            startActivity(intent);
-            Toast.makeText(getContext(), "This will be available in the next update", Toast.LENGTH_SHORT).show();
+            intent = new Intent(getContext(), SavedItemsActivity.class);
+            startActivity(intent);
+//            Toast.makeText(getContext(), "This will be available in the next update", Toast.LENGTH_SHORT).show();
         });
 
         rateNav.setOnClickListener(v -> {
