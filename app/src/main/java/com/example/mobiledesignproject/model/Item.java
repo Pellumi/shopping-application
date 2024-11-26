@@ -2,6 +2,7 @@ package com.example.mobiledesignproject.model;
 
 public class Item {
     private String price;
+    private String name;
     private int quantity;
 
     public String getPrice() {
@@ -18,5 +19,13 @@ public class Item {
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

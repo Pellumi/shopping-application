@@ -10,8 +10,8 @@
         android:layout_width="50dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="4dp"
-        android:fontFamily=""
-        android:text="02"
+        android:text="     "
+        android:background="@color/shadow"
         android:textSize="13sp"
         android:textStyle="normal" />
 
@@ -20,9 +20,9 @@
         android:layout_width="0dp"
         android:layout_weight="1"
         android:layout_height="wrap_content"
-        android:text="Peak Milk (Large Tin)"
+        android:text=""
         android:textAllCaps="true"
-        android:fontFamily=""
+        android:background="@color/shadow"
         android:textStyle="normal"
         android:textSize="13sp"/>
 
@@ -30,8 +30,9 @@
         android:id="@+id/item_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="44,000"
-        android:fontFamily=""
+        android:text="                 "
+        android:background="@color/shadow"
+        android:layout_marginStart="10dp"
         android:textStyle="normal"
         android:textSize="13sp"/>
 

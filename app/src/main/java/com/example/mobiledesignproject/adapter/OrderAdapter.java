@@ -17,9 +17,15 @@ import java.util.List;
 public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHolder> {
     private final List<Order> orderList;
     private final UIMethods ui = new UIMethods();
+    private OnOrderClickListener listener;
 
-    public OrderAdapter(List<Order> orderList) {
+    public OrderAdapter(List<Order> orderList, OnOrderClickListener listener) {
         this.orderList = orderList;
+        this.listener = listener;
+    }
+
+    public interface OnOrderClickListener {
+        void onOrderClick(Order order);
     }
 
     @NonNull
@@ -39,6 +45,10 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
         holder.orderAmount.setText(ui.formatCurrency(order.getTotalAmount()));
         holder.orderStatus.setText(ui.capitalizeWord(order.getStatus()));
         holder.orderQty.setText(String.valueOf(order.getItems().size()) + " Item(s)");
+
+        holder.itemView.setOnClickListener(v -> {
+            listener.onOrderClick(order);
+        });
     }
 
     @Override

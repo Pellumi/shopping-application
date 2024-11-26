@@ -23,6 +23,7 @@
             android:textSize="24sp"/>
 
         <TextView
+            android:id="@+id/order_address"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Topaz Hall"
@@ -68,7 +69,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="4dp"
             android:layout_marginBottom="5dp"
-            android:fontFamily="@font/courier_prime"
+            android:fontFamily=""
             android:text="Status: "
             android:textAllCaps="true"
             android:textSize="14sp"
@@ -79,7 +80,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Pending"
-            android:fontFamily="@font/courier_prime"
+            android:fontFamily=""
             android:textStyle="normal"
             android:textColor="@color/darkGray"
             android:layout_marginBottom="5dp"
@@ -93,7 +94,8 @@
         android:layout_height="wrap_content"
         android:text="MONDAY, SEPTEMBER 21, 2020"
         android:layout_marginBottom="11dp"
-        android:fontFamily="@font/courier_prime"
+        android:textAllCaps="true"
+        android:fontFamily=""
         android:textStyle="normal"
         android:textSize="14sp"/>
 
@@ -112,7 +114,7 @@
             android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="4dp"
-            android:fontFamily="@font/courier_prime"
+            android:fontFamily=""
             android:text="QTY"
             android:textSize="14sp"
             android:textStyle="bold" />
@@ -122,15 +124,15 @@
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:text="ITEM"
-            android:fontFamily="@font/courier_prime"
+            android:fontFamily=""
             android:textStyle="bold"
             android:textSize="14sp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="AMT"
-            android:fontFamily="@font/courier_prime"
+            android:text="AMT (₦)"
+            android:fontFamily=""
             android:textStyle="bold"
             android:textSize="14sp"/>
     </LinearLayout>
@@ -139,74 +141,6 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@color/black"/>
-
-<!--    <LinearLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginVertical="5dp"-->
-<!--        android:orientation="horizontal">-->
-
-<!--        <TextView-->
-<!--            android:layout_width="50dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginEnd="4dp"-->
-<!--            android:fontFamily="@font/courier_prime"-->
-<!--            android:text="02"-->
-<!--            android:textSize="13sp"-->
-<!--            android:textStyle="normal" />-->
-
-<!--        <TextView-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_weight="1"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="Peak Milk (Large Tin)"-->
-<!--            android:textAllCaps="true"-->
-<!--            android:fontFamily="@font/courier_prime"-->
-<!--            android:textStyle="normal"-->
-<!--            android:textSize="13sp"/>-->
-
-<!--        <TextView-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="44,000"-->
-<!--            android:fontFamily="@font/courier_prime"-->
-<!--            android:textStyle="normal"-->
-<!--            android:textSize="13sp"/>-->
-<!--    </LinearLayout>-->
-
-<!--    <LinearLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginVertical="5dp"-->
-<!--        android:orientation="horizontal">-->
-
-<!--        <TextView-->
-<!--            android:layout_width="50dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginEnd="4dp"-->
-<!--            android:fontFamily="@font/courier_prime"-->
-<!--            android:text="03"-->
-<!--            android:textSize="13sp"-->
-<!--            android:textStyle="normal" />-->
-
-<!--        <TextView-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_weight="1"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="Apple"-->
-<!--            android:fontFamily="@font/courier_prime"-->
-<!--            android:textStyle="normal"-->
-<!--            android:textAllCaps="true"-->
-<!--            android:textSize="13sp"/>-->
-
-<!--        <TextView-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="1,200"-->
-<!--            android:fontFamily="@font/courier_prime"-->
-<!--            android:textStyle="normal"-->
-<!--            android:textSize="13sp"/>-->
-<!--    </LinearLayout>-->
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/order_item_list"
@@ -230,7 +164,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="4dp"
-            android:fontFamily="@font/courier_prime"
+            android:fontFamily=""
             android:text="ITEM COUNT: "
             android:textSize="13sp"
             android:textStyle="bold" />
@@ -246,7 +180,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="05"
-            android:fontFamily="@font/courier_prime"
+            android:fontFamily=""
             android:textStyle="normal"
             android:textSize="14sp"/>
     </LinearLayout>
@@ -261,8 +195,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="4dp"
-            android:fontFamily="@font/courier_prime"
-            android:text="Delivery FEE: "
+            android:fontFamily=""
+            android:text="Delivery FEE (₦): "
             android:textAllCaps="true"
             android:textSize="13sp"
             android:textStyle="bold" />
@@ -274,10 +208,11 @@
             android:background="@color/transparent"/>
 
         <TextView
+            android:id="@+id/delivery_fee"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="400"
-            android:fontFamily="@font/courier_prime"
+            android:fontFamily=""
             android:textStyle="normal"
             android:textSize="14sp"/>
     </LinearLayout>
@@ -293,8 +228,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="4dp"
-            android:fontFamily="@font/courier_prime"
-            android:text="TOTAL: "
+            android:fontFamily=""
+            android:text="TOTAL (₦): "
             android:textSize="13sp"
             android:textStyle="bold" />
 
@@ -309,7 +244,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="45,600"
-            android:fontFamily="@font/courier_prime"
+            android:fontFamily=""
             android:textStyle="normal"
             android:textSize="14sp"/>
     </LinearLayout>
