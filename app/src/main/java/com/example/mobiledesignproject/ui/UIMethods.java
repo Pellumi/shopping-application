@@ -9,6 +9,7 @@ import android.text.InputType;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -111,9 +112,41 @@ public class UIMethods {
         }
     }
 
+    public String formatCurrencyNoSymbol(String numberString) {
+        if (numberString == null || numberString.isEmpty()) {
+            return "";
+        }
+
+        try {
+            String[] parts = numberString.split("\\.");
+            String integerPart = parts[0];
+
+            StringBuilder formattedInteger = new StringBuilder();
+            int length = integerPart.length();
+
+            for (int i = 0; i < length; i++) {
+                formattedInteger.append(integerPart.charAt(i));
+                int remaining = length - i - 1;
+                if (remaining > 0 && remaining % 3 == 0) {
+                    formattedInteger.append(",");
+                }
+            }
+
+            String formattedNumber = formattedInteger.toString();
+
+            if (parts.length > 1) {
+                formattedNumber += "." + parts[1];
+            }
+
+            return formattedNumber;
+        } catch (NumberFormatException e) {
+            return "Invalid Input";
+        }
+    }
+
 
     public void showRegularSnackBar(Context context, String message, int colorId, int layoutId){
-        LinearLayout parentLayout = ((Activity) context).findViewById(layoutId);
+        ViewGroup parentLayout = ((Activity) context).findViewById(layoutId);
         if (parentLayout == null) {
             Log.e("SnackBar", "Parent layout not found");
             return;
@@ -142,7 +175,7 @@ public class UIMethods {
     }
 
     public void showLowerRegularSnackBar(Context context, String message, int colorId, int layoutId){
-        LinearLayout parentLayout = ((Activity) context).findViewById(layoutId);
+        ViewGroup parentLayout = ((Activity) context).findViewById(layoutId);
         if (parentLayout == null) {
             Log.e("SnackBar", "Parent layout not found");
             return;
@@ -171,7 +204,7 @@ public class UIMethods {
     }
 
     public void showActionSnackBar(Context context, String message, String action, int id){
-        LinearLayout parentLayout = ((Activity) context).findViewById(R.id.main);
+        ViewGroup parentLayout = ((Activity) context).findViewById(R.id.main);
         if (parentLayout == null) {
             Log.e("SnackBar", "Parent layout not found");
             return;
@@ -246,4 +279,33 @@ public class UIMethods {
 
         return input.substring(0, 3);
     }
+
+    public String convertDateToLongFormat(String isoDate) {
+        SimpleDateFormat inputFormatWithMillis = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
+        SimpleDateFormat inputFormatWithoutMillis = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
+        SimpleDateFormat outputFormat = new SimpleDateFormat("EEEE, MMMM dd, yyyy");
+
+        try {
+            Date date;
+            try {
+                date = inputFormatWithMillis.parse(isoDate);
+            } catch (ParseException e) {
+                date = inputFormatWithoutMillis.parse(isoDate);
+            }
+            return outputFormat.format(date);
+        } catch (ParseException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public String formatToTwoDigits(String numberString) {
+        try {
+            int number = Integer.parseInt(numberString);
+            return String.format("%02d", number);
+        } catch (NumberFormatException e) {
+            return "Invalid input";
+        }
+    }
+
 }
